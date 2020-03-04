@@ -1,0 +1,13 @@
+/* Parent CSS */
+h1 {
+    font-size:xx-large;
+}
+
+div{
+    border: 2px solid black;
+}
+
+c-my-Component {
+    display: block;
+    border: 2px solid red;
+}

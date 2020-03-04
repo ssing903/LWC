@@ -1,0 +1,12 @@
+<template>
+    <lightning-input label="Number 1" name="Number 1"  onchange={onNumberChange} type="number"></lightning-input>
+    <lightning-input label="Number 2" name="Number 2" onchange={onNumberChange} type="number"></lightning-input>
+
+    {number3}
+    <br/>
+    <lightning-button name="Add" label="Add" onclick={add}></lightning-button>
+    <lightning-button name="Subtract" label="Subtract" onclick={subtract}></lightning-button>
+    <lightning-button name="Multiply" label="Multiply" onclick={multiply}></lightning-button>
+    <lightning-button name="Divide" label="Divide" onclick={divide}></lightning-button>
+
+</template>
