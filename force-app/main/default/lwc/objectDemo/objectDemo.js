@@ -1,5 +1,16 @@
 import { LightningElement,track} from 'lwc';
 
+(function(){
+
+    window.addEventListener("load",() => {
+        console.log(`%c App Started ... `,"font-size: 20px;color:blue;font-weight:bold");
+    });
+
+})();
+
+class Hello {
+
+}
 export default class ObjectDemo extends LightningElement {
     @track accounts = [
         {

@@ -1,0 +1,20 @@
+{
+  "name": "lwc",
+  "version": "1.0.0",
+  "description": "Lightning Web Component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"sfdx force:lightning:lwc:start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssing903/LWC.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ssing903/LWC/issues"
+  },
+  "homepage": "https://github.com/ssing903/LWC#readme"
+}
