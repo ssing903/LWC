@@ -1,9 +1,10 @@
 import { LightningElement } from 'lwc';
 
 export default class ToDoApp extends LightningElement {
-
-    get helloWorld() {
-        console.log(this.template.querySelector("test"));
-        return "test"
+    
+    helloWold(event) {
+        let  myItem = this.template.querySelectorAll('c-to-Item')[0]
+        console.log(myItem)
+        this.template.querySelectorAll('c-to-Item')[0].itemName = 'Hello World'
     }
 }

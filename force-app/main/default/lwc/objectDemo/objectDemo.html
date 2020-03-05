@@ -1,0 +1,19 @@
+<template>
+    <template if:true={displayTable}>
+        <lightning-datatable key-field="id" data={accounts} columns={columns} onrowaction={tableRowActions}>
+
+        </lightning-datatable>
+        <br/>
+        <lightning-button onclick={navigateToAddPage} label="Create Account"></lightning-button>
+    </template>
+    <div if:false={displayTable}>
+        <div class="slds-grid slds-gutters">
+            <lightning-input label="Name" class="slds-col" value={account.Name} onchange={handleChange} name="Name"></lightning-input>
+            <lightning-input label="Industry" class="slds-col" value={account.Industry} onchange={handleChange} name="Industry"></lightning-input>
+            <lightning-input label="Contact"  class="slds-col" value={account.Contact} name="Contact" onchange={handleChange}></lightning-input>
+            <lightning-input label="Number" class="slds-col" value={account.PhoneNumber} name="PhoneNumber" onchange={handleChange}></lightning-input>
+        </div>
+        <lightning-button onclick={submit} label="Save"></lightning-button>
+    </div>
+    <br/>
+</template>
