@@ -1,0 +1,26 @@
+<template>
+    <template if:true={displayAccountForm}>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <lightning-input type="text" name="Name" label="Account Name" value={account.Name} onchange={trackAccountValue}></lightning-input>
+                <lightning-input type="text" name="Stage" label="Stage" value={account.Stage} onchange={trackAccountValue} ></lightning-input>
+            </div>
+            <div class="slds-col">
+                <lightning-input type="text" name="Industry" label="Industry" value={account.Industry} onchange={trackAccountValue}></lightning-input>
+                <lightning-input type="text" name="Contact" label="Contact Number" value={account.Contact} onchange={trackAccountValue}></lightning-input>
+            </div>
+        </div>
+        <br />
+        <lightning-button name="Submit" label="Submit" class="slds-float_right" onclick={handleClick}></lightning-button>
+        <br />
+    </template>
+    <template if:false={displayAccountForm}>
+        <lightning-datatable
+                key-field="id"
+                data={data}
+                columns={columns}
+                onrowaction={handleRowAction}>
+        </lightning-datatable>
+        <lightning-button name="NewAccount" label="Add New Account" class="slds-float_right" onclick={handleClick}></lightning-button>
+    </template>
+</template>
