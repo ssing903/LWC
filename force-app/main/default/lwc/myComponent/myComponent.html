@@ -1,3 +1,35 @@
 <template>
-   <h1>TO DO ITEM</h1>
+   <!-- {name}  {title} {phone} &nbsp;<br/>
+   <template if:true={name}>
+      <p>
+         {name}
+      </p>
+   </template>
+   <template if:false={name}>
+      Name of User is Empty 
+   </template> -->
+
+   <lightning-card title="My First Lightning Web Component" icon-name="custom:custom4">
+      <lightning-layout vertical-align="center">
+         <lightning-layout-item padding="around-small">
+            <lightning-formatted-text value={name}></lightning-formatted-text>
+         </lightning-layout-item>
+         <lightning-layout-item padding="around-small">
+            <lightning-formatted-text value={title}></lightning-formatted-text>
+         </lightning-layout-item>
+         <lightning-layout-item padding="around-small">
+            <lightning-formatted-number value={phone}></lightning-formatted-number>
+         </lightning-layout-item>
+         <lightning-layout-item padding="around-small">
+            <lightning-formatted-email value={email}></lightning-formatted-email>
+         </lightning-layout-item>
+      </lightning-layout>
+
+      <lightning-layout vertical-align="center">
+         <lightning-layout-item padding="around-small">
+            <lightning-button label="Call JS" variant="brand" onclick={handleClick}></lightning-button>
+         </lightning-layout-item>
+      </lightning-layout>
+   </lightning-card>
+
 </template>

@@ -1,18 +1,16 @@
 public with sharing class ContactController {
-@AuraEnabled(cacheable=true)
-public static Contact fetchContact(){
-    return [SELECT Id,Name, LastName FROM Contact where Name='xxxx' LIMIT 1];
-}
+    
+    @AuraEnabled(cacheable=true)
+    public static List<sObject> getContactList(string name){
+        String key ='%'+name+'%';
+        String query = 'Select Id, LastName,Email,Phone from Contact Where Name LIKE :key';
+        return Database.query(query);
+    }
 
-@AuraEnabled
-public static String createContactRecord(Contact newRecord){
-    insert newRecord;
-    return newRecord.Id;
-}
-
-@AuraEnabled
-public static String updateContactRecord(Contact recordForUpdate){
-    update recordForUpdate;
-    return recordForUpdate.Name;
-}
+    @AuraEnabled(cacheable=true)
+    public static List<sObject> getAccountList(string name){
+        String key ='%'+name+'%';
+        String query = 'Select Id, Name,Industry,BillingStreet from Account Where Name LIKE :key';
+        return Database.query(query);
+    }
 }

@@ -1,5 +1,5 @@
 <template>
-    <template if:true={displayAccountForm}>
+    <!-- <template if:true={displayAccountForm}>
         <div class="slds-grid slds-gutters">
             <div class="slds-col">
                 <lightning-input type="text" name="Name" label="Account Name" value={account.Name} onchange={trackAccountValue}></lightning-input>
@@ -22,5 +22,19 @@
                 onrowaction={handleRowAction}>
         </lightning-datatable>
         <lightning-button name="NewAccount" label="Add New Account" class="slds-float_right" onclick={handleClick}></lightning-button>
-    </template>
+    </template> -->
+
+
+    <lightning-card title={account.Name} icon-name="standard:account">
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item padding="around-small">
+                <p>
+                    <lightning-formatted-email value={account.Industry}></lightning-formatted-email>
+                </p>
+                <p>
+                    <lightning-formatted-phone value={account.BillingStreet}></lightning-formatted-phone>
+                </p>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
 </template>

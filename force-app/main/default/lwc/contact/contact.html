@@ -1,5 +1,51 @@
 <template>
-<lightning-card title="My Hello World" icon-name="standard:contact">{recordId}</lightning-card>
-<lightning-button label="Create Record" onclick={createRecord}></lightning-button>
-<lightning-button label="Update Record" onclick={udpateRecord}></lightning-button>
+    <lightning-card title="Contact List" icon-name="standard:contact">
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item padding="around-small">
+                <lightning-input label="Find Contact" value={searchKey} onchange={handleChange}></lightning-input>
+            </lightning-layout-item>
+                <template for:each={lst_Contact} for:item="contact">
+                    <lightning-layout-item key={contact.Id}>
+                        <p>
+                            {contact.LastName}
+                        </p>
+                        <p>
+                            <lightning-formatted-email value={contact.Email}></lightning-formatted-email>
+                        </p>
+                        <p>
+                            <lightning-formatted-phone value={contact.Phone}></lightning-formatted-phone>
+                        </p>
+                    </lightning-layout-item>
+                </template>
+        </lightning-layout>
+    </lightning-card>
+
+    <lightning-card title="Account List" icon-name="standard:account">
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item padding="around-small">
+                <lightning-input label="Find Account" value={searchKey} onchange={handleChange}></lightning-input>
+            </lightning-layout-item>
+                <template for:each={lst_Account} for:item="account">
+                    <c-create-Account key={account.Id} account={account}></c-create-Account>
+                    <!-- <lightning-layout-item key={account.Id}>
+                        <p>
+                            {account.Name}
+                        </p>
+                        <p>
+                            <lightning-formatted-email value={account.Industry}></lightning-formatted-email>
+                        </p>
+                        <p>
+                            <lightning-formatted-phone value={account.BillingStreet}></lightning-formatted-phone>
+                        </p>
+                    </lightning-layout-item> -->
+                </template>
+        </lightning-layout>
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item padding="around-small">
+                <lightning-button label="Find Account" variant="brand" onclick={findAccounts}>
+
+                </lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
 </template>
