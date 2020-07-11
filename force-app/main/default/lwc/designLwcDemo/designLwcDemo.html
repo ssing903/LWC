@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Design Attribute Demo" icon-name="custom:custom5">
+        {greeting}
+        {heading}
+
+        <p> {label.testLabel}</p>
+        <img src={label.testResource} alt="Nothing" srcset="">
+        <p> User ID {label.userId}</p>
+        <p>{label.AccountObject.objectApiName}</p>
+        <p>{label.lang}</p>
+        <p>{label.locale}</p>
+        <p>{label.currency}</p>
+        <p>{label.timezone}</p>
+    </lightning-card>
+</template>

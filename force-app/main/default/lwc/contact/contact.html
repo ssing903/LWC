@@ -20,13 +20,21 @@
         </lightning-layout>
     </lightning-card>
 
+    <lightning-layout>
+        <lightning-layout-item padding="around-small">
+            <template if:true={selectedAccount}>
+                <p> {selectedAccount.Name}</p>
+                <p> {selectedAccount.Industry}</p>
+            </template>
+        </lightning-layout-item>
+    </lightning-layout>
     <lightning-card title="Account List" icon-name="standard:account">
         <lightning-layout vertical-align="center">
             <lightning-layout-item padding="around-small">
                 <lightning-input label="Find Account" value={searchKey} onchange={handleChange}></lightning-input>
             </lightning-layout-item>
                 <template for:each={lst_Account} for:item="account">
-                    <c-create-Account key={account.Id} account={account}></c-create-Account>
+                    <c-create-Account key={account.Id} onselect={handleSelectRecord} account={account}></c-create-Account>
                     <!-- <lightning-layout-item key={account.Id}>
                         <p>
                             {account.Name}

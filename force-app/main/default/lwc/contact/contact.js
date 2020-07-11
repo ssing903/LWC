@@ -5,7 +5,9 @@ export default class Contact extends LightningElement {
 
     @track lst_Contact = [];
     @track lst_Account = [];
-    @track searchKey 
+    @track searchKey ;
+    @track selectedAccount;
+
     @wire(getContactList,{
         name : '$searchKey'
     })
@@ -31,4 +33,15 @@ export default class Contact extends LightningElement {
             console.log(error);
         })
     }
+
+    handleSelectRecord(event) {
+        const recordId = event.detail;
+        this.selectedAccount = this.lst_Account.find(account => account.Id === recordId);
+        
+    }
+
 }
+
+/*
+    @wire(getContactList,{name : '$searchKey})lstContact
+*/
